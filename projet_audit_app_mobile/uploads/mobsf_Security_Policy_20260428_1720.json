@@ -1,0 +1,87 @@
+{
+    "findings": [
+        {
+            "ai_recommendation": "Refer to MASTG-CRYPTO-1: Use AES-GCM for encryption. Keys must be stored in the Hardware Keystore.",
+            "category": "Analysis/Detection",
+            "chapter": "Chapter 9: Cryptography",
+            "description": "https://masvs.owasp.org/checklists/MASVS-CRYPTO-1/",
+            "id": "DET-2",
+            "lab_ref": "Lab 4",
+            "mastg_id": "MASTG-CRYPTO-1",
+            "masvs_id": "MASVS-CRYPTO",
+            "maswe_id": "MASWE-200",
+            "risk_score": 45,
+            "score_factors": {
+                "exploitability": 9,
+                "exposure": 5,
+                "impact": 10
+            },
+            "severity": "critical",
+            "source": "MobSF/Source",
+            "title": "Hardcoded Encryption Key"
+        },
+        {
+            "ai_recommendation": "Refer to MASTG-STORAGE-1: Ensure sensitive data is not stored in shared locations. Use EncryptedSharedPreferences.",
+            "category": "Analysis/Detection",
+            "chapter": "Chapter 8: Data Storage",
+            "description": "https://masvs.owasp.org/checklists/MASVS-STORAGE-1/",
+            "id": "DET-3",
+            "lab_ref": "Lab 6",
+            "mastg_id": "MASTG-STORAGE-1",
+            "masvs_id": "MASVS-STORAGE",
+            "maswe_id": "MASWE-100",
+            "risk_score": 28,
+            "score_factors": {
+                "exploitability": 7,
+                "exposure": 5,
+                "impact": 8
+            },
+            "severity": "high",
+            "source": "MobSF/Source",
+            "title": "Insecure Local Storage"
+        },
+        {
+            "ai_recommendation": "Check OWASP MASTG Chapter 4 for baseline security remediation.",
+            "category": "Analysis/Detection",
+            "chapter": "Chapter 4: Audit Process",
+            "description": "The application is debuggable which allows a malicious user to attach a debugger.",
+            "id": "DET-0",
+            "lab_ref": "N/A",
+            "mastg_id": "MASTG-GENERIC",
+            "masvs_id": "MASVS-GENERIC",
+            "maswe_id": "MASWE-999",
+            "risk_score": 20,
+            "score_factors": {
+                "exploitability": 5,
+                "exposure": 5,
+                "impact": 8
+            },
+            "severity": "high",
+            "source": "MobSF/Source",
+            "title": "Debuggable Application"
+        },
+        {
+            "ai_recommendation": "Check OWASP MASTG Chapter 4 for baseline security remediation.",
+            "category": "Analysis/Detection",
+            "chapter": "Chapter 4: Audit Process",
+            "description": "The application allows backups which can expose sensitive data.",
+            "id": "DET-1",
+            "lab_ref": "N/A",
+            "mastg_id": "MASTG-GENERIC",
+            "masvs_id": "MASVS-GENERIC",
+            "maswe_id": "MASWE-999",
+            "risk_score": 17.5,
+            "score_factors": {
+                "exploitability": 7,
+                "exposure": 5,
+                "impact": 5
+            },
+            "severity": "medium",
+            "source": "MobSF/Source",
+            "title": "Insecure Backup Configuration"
+        }
+    ],
+    "status": "success",
+    "summary": "The automated audit identified 4 unique security issues. Urgent attention is required for 0 high-risk vulnerabilities. The most critical finding, 'Hardcoded Encryption Key', requires immediate remediation. Overall, the audit covers MASVS Chapters 6-15 and Labs 4-6.",
+    "format": "json"
+}

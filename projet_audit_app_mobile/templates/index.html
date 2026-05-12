@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MASVS Audit Copilot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f8fafc; color: #1e293b; }
+        .glass { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid rgba(0, 0, 0, 0.1); }
+        .gradient-text { background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+        .btn-primary { background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%); transition: all 0.3s ease; }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 20px -10px #3b82f6; }
+    </style>
+</head>
+<body class="min-h-screen p-8">
+    <div class="max-w-4xl mx-auto">
+        <header class="text-center mb-12">
+            <h1 class="text-5xl font-800 mb-2 gradient-text">MASVS Audit Copilot</h1>
+            <p class="text-slate-600 text-lg">Génération automatique de rapports de sécurité mobile</p>
+        </header>
+
+        <div class="glass rounded-3xl p-8 mb-8">
+            <form id="auditForm" class="space-y-6">
+                <div>
+                    <label class="block text-sm font-semibold mb-2 text-slate-700">Nom du Projet</label>
+                    <input type="text" name="project_name" placeholder="ex: Application Mobile E-Commerce" 
+                           class="w-full bg-white/50 border border-slate-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+
+                <!-- Mode d'analyse -->
+                <div class="mb-6">
+                    <label class="block text-sm font-semibold mb-3 text-slate-700">Mode d'Analyse</label>
+                    <div class="flex gap-4">
+                        <label class="flex items-center cursor-pointer">
+                            <input type="radio" name="analysis_mode" value="apk" checked class="mr-2 text-blue-500">
+                            <span class="text-slate-700">Analyse APK Directe (MOBSF)</span>
+                        </label>
+                        <label class="flex items-center cursor-pointer">
+                            <input type="radio" name="analysis_mode" value="reports" class="mr-2 text-blue-500">
+                            <span class="text-slate-700">Import Rapports Externes</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Section APK -->
+                <div id="apkSection" class="space-y-6">
+                    <div class="space-y-2">
+                        <label class="block text-sm font-semibold text-slate-700">Fichier APK à Analyser</label>
+                        <input type="file" name="apk" accept=".apk" class="block w-full text-sm text-slate-600 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-green-500/10 file:text-green-600 hover:file:bg-green-500/20">
+                        <p class="text-xs text-slate-500">L'APK sera analysé automatiquement via MOBSF pour générer un rapport de sécurité complet</p>
+                    </div>
+                </div>
+
+                <!-- Section Rapports -->
+                <div id="reportsSection" class="space-y-6 hidden">
+                    <div class="space-y-2">
+                        <label class="block text-sm font-semibold text-slate-700">MobSF JSON</label>
+                        <input type="file" name="mobsf" class="block w-full text-sm text-slate-600 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-blue-500/10 file:text-blue-600 hover:file:bg-blue-500/20">
+                        <p class="text-xs text-slate-500">Importez un rapport JSON généré par MOBSF ou un autre outil d'analyse</p>
+                    </div>
+                </div>
+
+                <button type="submit" id="submitBtn" class="w-full btn-primary py-4 rounded-xl font-bold text-lg">
+                    Lancer l'Audit Automatique
+                </button>
+            </form>
+        </div>
+
+        <div id="results" class="hidden glass rounded-3xl p-8">
+            <h2 class="text-2xl font-bold mb-4">Résultats de l'Analyse</h2>
+            <div id="statusMsg" class="mb-6 p-4 rounded-xl bg-blue-500/10 border border-blue-500/20 text-blue-300"></div>
+            
+            <div class="flex gap-4">
+                <a id="htmlReport" target="_blank" class="flex-1 text-center bg-white hover:bg-slate-50 py-3 rounded-xl font-semibold border border-slate-300 transition-colors">
+                    Voir Rapport HTML
+                </a>
+                <a id="jsonReport" target="_blank" class="flex-1 text-center bg-white hover:bg-slate-50 py-3 rounded-xl font-semibold border border-slate-300 transition-colors">
+                    Rapport JSON
+                </a>
+            </div>
+        </div>
+
+        <div id="loader" class="hidden text-center py-12">
+            <div class="inline-block animate-spin rounded-full h-12 w-12 border-4 border-blue-500 border-t-transparent"></div>
+            <p class="mt-4 text-slate-600 font-semibold">Analyse IA en cours...</p>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('auditForm');
+        const results = document.getElementById('results');
+        const loader = document.getElementById('loader');
+        const submitBtn = document.getElementById('submitBtn');
+        const apkSection = document.getElementById('apkSection');
+        const reportsSection = document.getElementById('reportsSection');
+
+        // Gérer le changement de mode d'analyse
+        document.querySelectorAll('input[name="analysis_mode"]').forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if (e.target.value === 'apk') {
+                    apkSection.classList.remove('hidden');
+                    reportsSection.classList.add('hidden');
+                } else {
+                    apkSection.classList.add('hidden');
+                    reportsSection.classList.remove('hidden');
+                }
+            });
+        });
+
+        form.onsubmit = async (e) => {
+            e.preventDefault();
+            const formData = new FormData(form);
+            
+            submitBtn.disabled = true;
+            loader.classList.remove('hidden');
+            results.classList.add('hidden');
+
+            try {
+                const resp = await fetch('/audit', { method: 'POST', body: formData });
+                const data = await resp.json();
+                
+                if (data.status === 'success') {
+                    document.getElementById('statusMsg').innerText = `Succès ! ${data.findings_count} vulnérabilités identifiées et mappées.`;
+                    document.getElementById('htmlReport').href = '/' + data.files.html;
+                    document.getElementById('jsonReport').href = '/' + data.files.json;
+                    results.classList.remove('hidden');
+                } else {
+                    alert('Erreur: ' + (data.error || 'Inconnue'));
+                }
+            } catch (err) {
+                alert('Erreur lors de la requête.');
+            } finally {
+                loader.classList.add('hidden');
+                submitBtn.disabled = false;
+            }
+        };
+    </script>
+</body>
+</html>

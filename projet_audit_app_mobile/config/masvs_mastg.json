@@ -1,0 +1,25 @@
+{
+  "maswe": {
+    "MASWE-0004": "Insecure Data Storage Configuration",
+    "MASWE-0005": "Hardcoded Cryptographic Material or Secrets",
+    "MASWE-0028": "Sensitive Data Exposure in Logs/URLs",
+    "MASWE-0050": "Insecure Communication (Cleartext / Weak TLS)",
+    "MASWE-0068": "WebView Security Misconfiguration"
+  },
+  "masvs": {
+    "MASVS-STORAGE-1": "Sensitive data at rest is protected.",
+    "MASVS-NETWORK-1": "Data in transit is protected and cleartext is disabled.",
+    "MASVS-AUTH-2": "Authentication tokens are securely handled.",
+    "MASVS-CODE-3": "Client-side attack surface is minimized.",
+    "MASVS-PLATFORM-1": "Platform interaction and exported behaviors are controlled."
+  },
+  "mastg": {
+    "MASTG-TEST-0002": "Review for hardcoded credentials and keys.",
+    "MASTG-TEST-0019": "Assess auth/session token handling.",
+    "MASTG-TEST-0031": "Test WebView hardening and JS interfaces.",
+    "MASTG-TEST-0216": "Verify Android backup and debug exposure.",
+    "MASTG-TEST-0284": "Verify cleartext/TLS network controls.",
+    "MASTG-TECH-0012": "Network security configuration guidance.",
+    "MASTG-TECH-0016": "Secret management and key handling."
+  }
+}

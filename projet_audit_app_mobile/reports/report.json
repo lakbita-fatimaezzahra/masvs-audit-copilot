@@ -1,0 +1,384 @@
+{
+  "project_name": "",
+  "findings": [
+    {
+      "source": "MobSF",
+      "title": "MobSF Security Score",
+      "details": "Overall score: 55/100 (MEDIUM RISK)",
+      "severity": "info",
+      "evidence": {
+        "score": "55/100 (MEDIUM RISK)"
+      },
+      "tags": [
+        "score"
+      ],
+      "maswe": "MASWE-UNKNOWN",
+      "masvs": "MASVS-UNKNOWN",
+      "mastg_sections": [],
+      "recommendation": "Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.",
+      "impact": 1,
+      "exploitability": 1,
+      "exposure": 1,
+      "score": 1,
+      "priority": "P4"
+    },
+    {
+      "source": "MobSF",
+      "title": "MobSF General Finding",
+      "details": "1",
+      "severity": "info",
+      "evidence": {
+        "high": 2,
+        "medium": 4,
+        "info": 1,
+        "secure": 2,
+        "hotspot": 0,
+        "_ref": "v1"
+      },
+      "tags": [
+        "general"
+      ],
+      "maswe": "MASWE-UNKNOWN",
+      "masvs": "MASVS-UNKNOWN",
+      "mastg_sections": [],
+      "recommendation": "Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.",
+      "impact": 1,
+      "exploitability": 1,
+      "exposure": 1,
+      "score": 1,
+      "priority": "P4"
+    },
+    {
+      "source": "MobSF",
+      "title": "Anti-VM Code",
+      "details": "Build.TAGS check",
+      "severity": "info",
+      "evidence": {
+        "file": "classes.dex",
+        "findings": "Anti-VM Code",
+        "details": "Build.TAGS check",
+        "_ref": "v1"
+      },
+      "tags": [
+        "general"
+      ],
+      "maswe": "MASWE-UNKNOWN",
+      "masvs": "MASVS-UNKNOWN",
+      "mastg_sections": [],
+      "recommendation": "Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.",
+      "impact": 1,
+      "exploitability": 1,
+      "exposure": 1,
+      "score": 1,
+      "priority": "P4"
+    },
+    {
+      "source": "MobSF",
+      "title": "Compiler",
+      "details": "dxr8 without marker (suspicious)",
+      "severity": "info",
+      "evidence": {
+        "file": "classes.dex",
+        "findings": "Compiler",
+        "details": "dxr8 without marker (suspicious)",
+        "_ref": "v2"
+      },
+      "tags": [
+        "general"
+      ],
+      "maswe": "MASWE-UNKNOWN",
+      "masvs": "MASVS-UNKNOWN",
+      "mastg_sections": [],
+      "recommendation": "Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.",
+      "impact": 1,
+      "exploitability": 1,
+      "exposure": 1,
+      "score": 1,
+      "priority": "P4"
+    },
+    {
+      "source": "MobSF",
+      "title": "MobSF Certificate Finding",
+      "details": "1",
+      "severity": "info",
+      "evidence": {
+        "high": 0,
+        "warning": 1,
+        "info": 1
+      },
+      "tags": [
+        "certificate"
+      ],
+      "maswe": "MASWE-UNKNOWN",
+      "masvs": "MASVS-UNKNOWN",
+      "mastg_sections": [],
+      "recommendation": "Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.",
+      "impact": 1,
+      "exploitability": 1,
+      "exposure": 1,
+      "score": 1,
+      "priority": "P4"
+    },
+    {
+      "source": "MobSF",
+      "title": "Signed Application",
+      "details": "Application is signed with a code signing certificate",
+      "severity": "info",
+      "evidence": {
+        "title": "Signed Application",
+        "severity": "info",
+        "description": "Application is signed with a code signing certificate",
+        "_ref": "v1"
+      },
+      "tags": [
+        "general"
+      ],
+      "maswe": "MASWE-UNKNOWN",
+      "masvs": "MASVS-UNKNOWN",
+      "mastg_sections": [],
+      "recommendation": "Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.",
+      "impact": 1,
+      "exploitability": 1,
+      "exposure": 1,
+      "score": 1,
+      "priority": "P4"
+    },
+    {
+      "source": "MobSF",
+      "title": "Application vulnerable to Janus Vulnerability",
+      "details": "Application is signed with v1 signature scheme, making it vulnerable to Janus vulnerability on Android 5.0-8.0, if signed only with v1 signature scheme. Applications running on Android 5.0-7.0 signed with v1, and v2/v3 scheme is also vulnerable.",
+      "severity": "medium",
+      "evidence": {
+        "title": "Application vulnerable to Janus Vulnerability",
+        "severity": "warning",
+        "description": "Application is signed with v1 signature scheme, making it vulnerable to Janus vulnerability on Android 5.0-8.0, if signed only with v1 signature scheme. Applications running on Android 5.0-7.0 signed with v1, and v2/v3 scheme is also vulnerable.",
+        "_ref": "v2"
+      },
+      "tags": [
+        "general"
+      ],
+      "maswe": "MASWE-UNKNOWN",
+      "masvs": "MASVS-UNKNOWN",
+      "mastg_sections": [],
+      "recommendation": "Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.",
+      "impact": 1,
+      "exploitability": 1,
+      "exposure": 1,
+      "score": 1,
+      "priority": "P4"
+    },
+    {
+      "source": "MobSF",
+      "title": "MobSF Manifest Finding",
+      "details": "",
+      "severity": "info",
+      "evidence": {
+        "high": 1,
+        "warning": 1,
+        "info": 0,
+        "suppressed": 0
+      },
+      "tags": [
+        "manifest"
+      ],
+      "maswe": "MASWE-UNKNOWN",
+      "masvs": "MASVS-UNKNOWN",
+      "mastg_sections": [],
+      "recommendation": "Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.",
+      "impact": 1,
+      "exploitability": 1,
+      "exposure": 1,
+      "score": 1,
+      "priority": "P4"
+    },
+    {
+      "source": "MobSF",
+      "title": "App can be installed on a vulnerable unpatched Android version 4.4-4.4.4, [minSdk=19]",
+      "details": "This application can be installed on an older version of android that has multiple unfixed vulnerabilities. These devices won't receive reasonable security updates from Google. Support an Android version => 10, API 29 to receive reasonable security updates.",
+      "severity": "high",
+      "evidence": {
+        "no": 1,
+        "issue": "App can be installed on a vulnerable unpatched Android version 4.4-4.4.4, [minSdk=19]",
+        "severity": "high",
+        "description": "This application can be installed on an older version of android that has multiple unfixed vulnerabilities. These devices won't receive reasonable security updates from Google. Support an Android version => 10, API 29 to receive reasonable security updates.",
+        "_ref": "v1"
+      },
+      "tags": [
+        "general"
+      ],
+      "maswe": "MASWE-UNKNOWN",
+      "masvs": "MASVS-UNKNOWN",
+      "mastg_sections": [],
+      "recommendation": "Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.",
+      "impact": 1,
+      "exploitability": 1,
+      "exposure": 1,
+      "score": 1,
+      "priority": "P4"
+    },
+    {
+      "source": "MobSF",
+      "title": "Application Data can be Backed up [android:allowBackup=true]",
+      "details": "This flag allows anyone to backup your application data via adb. It allows users who have enabled USB debugging to copy application data off of the device.",
+      "severity": "medium",
+      "evidence": {
+        "no": 2,
+        "issue": "Application Data can be Backed up [android:allowBackup=true]",
+        "severity": "warning",
+        "description": "This flag allows anyone to backup your application data via adb. It allows users who have enabled USB debugging to copy application data off of the device.",
+        "_ref": "v2"
+      },
+      "tags": [
+        "general"
+      ],
+      "maswe": "MASWE-UNKNOWN",
+      "masvs": "MASVS-UNKNOWN",
+      "mastg_sections": [],
+      "recommendation": "Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.",
+      "impact": 1,
+      "exploitability": 1,
+      "exposure": 1,
+      "score": 1,
+      "priority": "P4"
+    },
+    {
+      "source": "MobSF",
+      "title": "MobSF Code Finding",
+      "details": "1",
+      "severity": "info",
+      "evidence": {
+        "high": 1,
+        "warning": 1,
+        "info": 1,
+        "secure": 1,
+        "suppressed": 0
+      },
+      "tags": [
+        "code"
+      ],
+      "maswe": "MASWE-UNKNOWN",
+      "masvs": "MASVS-UNKNOWN",
+      "mastg_sections": [],
+      "recommendation": "Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.",
+      "impact": 1,
+      "exploitability": 1,
+      "exposure": 1,
+      "score": 1,
+      "priority": "P4"
+    },
+    {
+      "source": "MobSF",
+      "title": "Calling Cipher.getInstance(\"AES\") will return AES ECB mode by default. ECB mode is known to be weak as it results in the same ciphertext for identical blocks of plaintext.",
+      "details": "",
+      "severity": "high",
+      "evidence": {
+        "no": 1,
+        "issue": "Calling Cipher.getInstance(\"AES\") will return AES ECB mode by default. ECB mode is known to be weak as it results in the same ciphertext for identical blocks of plaintext.",
+        "severity": "high",
+        "standards": "CWE: CWE-327: Use of a Broken or Risky Cryptographic AlgorithmOWASP Top 10: M5: Insufficient CryptographyOWASP MASVS: MSTG-CRYPTO-2",
+        "files": "sg/vantagepoint/a/a.java",
+        "_ref": "v1"
+      },
+      "tags": [
+        "general"
+      ],
+      "maswe": "MASWE-005",
+      "masvs": "MASVS-CRYPTO-1",
+      "mastg_sections": [
+        "MASTG-ARCH-2",
+        "MASTG-CRYPTO-1"
+      ],
+      "recommendation": "Utiliser des algorithmes de chiffrement forts et modernes (AES-256, RSA-2048+).",
+      "impact": 1,
+      "exploitability": 1,
+      "exposure": 1,
+      "score": 1,
+      "priority": "P4"
+    },
+    {
+      "source": "MobSF",
+      "title": "The App logs information. Sensitive information should never be logged.",
+      "details": "",
+      "severity": "info",
+      "evidence": {
+        "no": 2,
+        "issue": "The App logs information. Sensitive information should never be logged.",
+        "severity": "info",
+        "standards": "CWE: CWE-532: Insertion of Sensitive Information into Log FileOWASP MASVS: MSTG-STORAGE-3",
+        "files": "sg/vantagepoint/uncrackable1/a.java",
+        "_ref": "v2"
+      },
+      "tags": [
+        "general"
+      ],
+      "maswe": "MASWE-UNKNOWN",
+      "masvs": "MASVS-UNKNOWN",
+      "mastg_sections": [],
+      "recommendation": "Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.",
+      "impact": 1,
+      "exploitability": 1,
+      "exposure": 1,
+      "score": 1,
+      "priority": "P4"
+    },
+    {
+      "source": "MobSF",
+      "title": "This App may request root (Super User) privileges.",
+      "details": "",
+      "severity": "medium",
+      "evidence": {
+        "no": 3,
+        "issue": "This App may request root (Super User) privileges.",
+        "severity": "warning",
+        "standards": "CWE: CWE-250: Execution with Unnecessary PrivilegesOWASP MASVS: MSTG-RESILIENCE-1",
+        "files": "sg/vantagepoint/a/c.java",
+        "_ref": "v3"
+      },
+      "tags": [
+        "general"
+      ],
+      "maswe": "MASWE-UNKNOWN",
+      "masvs": "MASVS-UNKNOWN",
+      "mastg_sections": [],
+      "recommendation": "Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.",
+      "impact": 1,
+      "exploitability": 1,
+      "exposure": 1,
+      "score": 1,
+      "priority": "P4"
+    },
+    {
+      "source": "MobSF",
+      "title": "This App may have root detection capabilities.",
+      "details": "",
+      "severity": "info",
+      "evidence": {
+        "no": 4,
+        "issue": "This App may have root detection capabilities.",
+        "severity": "secure",
+        "standards": "OWASP MASVS: MSTG-RESILIENCE-1",
+        "files": "sg/vantagepoint/a/c.java",
+        "_ref": "v4"
+      },
+      "tags": [
+        "general"
+      ],
+      "maswe": "MASWE-UNKNOWN",
+      "masvs": "MASVS-UNKNOWN",
+      "mastg_sections": [],
+      "recommendation": "Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.",
+      "impact": 1,
+      "exploitability": 1,
+      "exposure": 1,
+      "score": 1,
+      "priority": "P4"
+    }
+  ],
+  "executive_summary": "Résumé Exécutif - Audit MASVS\n\nL'analyse a identifié 15 vulnérabilités dans l'application mobile.\n\n**Synthèse des Risques:**\n- 0 vulnérabilités critiques (P1)\n- 0 vulnérabilités élevées (P2)  \n- 0 vulnérabilités moyennes (P3)\n- 15 vulnérabilités faibles (P4)\n\n**Recommandations Principales:**\n1. Prioriser la correction des vulnérabilités P1 et P2\n2. Mettre en place des contrôles de sécurité renforcés\n3. Effectuer des tests de pénétration réguliers\n4. Former les équipes de développement aux bonnes pratiques\n\n*Note: Résumé généré sans IA en raison de limitations techniques.*\n",
+  "metrics": {
+    "priority_counts": {
+      "P4": 15
+    },
+    "mapping_coverage": 6.7
+  }
+}

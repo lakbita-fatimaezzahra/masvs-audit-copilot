@@ -1,0 +1,303 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Rapport Audit MASVS - </title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #1e293b;
+            --border: #e2e8f0;
+        }
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 40px; }
+        .container { max-width: 1200px; margin: 0 auto; background: var(--card); padding: 48px; border-radius: 24px; box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1); }
+        h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--primary); }
+        .subtitle { color: #64748b; margin-bottom: 40px; font-weight: 600; }
+        
+        .summary-card { background: #f1f5f9; padding: 24px; border-radius: 16px; border-left: 6px solid var(--primary); margin-bottom: 40px; line-height: 1.6; font-size: 18px; }
+        
+        .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-bottom: 48px; }
+        .stat-box { background: white; border: 1px solid var(--border); padding: 24px; border-radius: 16px; text-align: center; }
+        .stat-val { font-size: 36px; font-weight: 800; color: var(--primary); }
+        .stat-label { font-size: 14px; font-weight: 600; color: #64748b; text-transform: uppercase; margin-top: 4px; }
+        
+        table { width: 100%; border-collapse: collapse; margin-top: 24px; }
+        th { text-align: left; padding: 16px; border-bottom: 2px solid var(--border); color: #64748b; font-size: 12px; text-transform: uppercase; }
+        td { padding: 20px 16px; border-bottom: 1px solid var(--border); vertical-align: top; font-size: 14px; }
+        
+        .priority-dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; margin-right: 8px; }
+        .finding-title { font-weight: 700; margin-bottom: 4px; }
+        .finding-source { font-size: 12px; color: #64748b; }
+        .badge { padding: 4px 10px; border-radius: 6px; font-size: 11px; font-weight: 700; display: inline-block; margin: 2px; }
+        .badge-we { background: #f1f5f9; color: #475569; }
+        .badge-vs { background: #dbeafe; color: #1e40af; }
+        .badge-mastg { background: #dcfce7; color: #166534; }
+        .recommendation { font-style: italic; color: #334155; }
+        .font-bold { font-weight: 800; }
+        .text-center { text-align: center; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Rapport d'Audit Mobile</h1>
+        <div class="subtitle">Analyse Standards MASVS / MASTG • </div>
+        
+        <div class="summary-card">
+            Résumé Exécutif - Audit MASVS
+
+L'analyse a identifié 15 vulnérabilités dans l'application mobile.
+
+**Synthèse des Risques:**
+- 0 vulnérabilités critiques (P1)
+- 0 vulnérabilités élevées (P2)  
+- 0 vulnérabilités moyennes (P3)
+- 15 vulnérabilités faibles (P4)
+
+**Recommandations Principales:**
+1. Prioriser la correction des vulnérabilités P1 et P2
+2. Mettre en place des contrôles de sécurité renforcés
+3. Effectuer des tests de pénétration réguliers
+4. Former les équipes de développement aux bonnes pratiques
+
+*Note: Résumé généré sans IA en raison de limitations techniques.*
+
+        </div>
+        
+        <div class="stats-grid">
+            <div class="stat-box">
+                <div class="stat-val">15</div>
+                <div class="stat-label">Total Findings</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-val" style="color: #ef4444;">0</div>
+                <div class="stat-label">Priorité P1</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-val" style="color: #f59e0b;">0</div>
+                <div class="stat-label">Priorité P2</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-val">6.7%</div>
+                <div class="stat-label">Couverture Mapping</div>
+            </div>
+        </div>
+        
+        <h2>Registre des Vulnérabilités</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 100px;">Priorité</th>
+                    <th style="width: 60px;">Score</th>
+                    <th>Titre & Source</th>
+                    <th>MASWE</th>
+                    <th>MASVS</th>
+                    <th>MASTG</th>
+                    <th>Recommandation</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+            <tr>
+                <td><span class="priority-dot" style="background-color: #10b981"></span>P4</td>
+                <td class="text-center font-bold">1</td>
+                <td>
+                    <div class="finding-title">MobSF Security Score</div>
+                    <div class="finding-source">MobSF</div>
+                </td>
+                <td><span class="badge badge-we">MASWE-UNKNOWN</span></td>
+                <td><span class="badge badge-vs">MASVS-UNKNOWN</span></td>
+                <td></td>
+                <td class="recommendation">Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.</td>
+            </tr>
+        
+            <tr>
+                <td><span class="priority-dot" style="background-color: #10b981"></span>P4</td>
+                <td class="text-center font-bold">1</td>
+                <td>
+                    <div class="finding-title">MobSF General Finding</div>
+                    <div class="finding-source">MobSF</div>
+                </td>
+                <td><span class="badge badge-we">MASWE-UNKNOWN</span></td>
+                <td><span class="badge badge-vs">MASVS-UNKNOWN</span></td>
+                <td></td>
+                <td class="recommendation">Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.</td>
+            </tr>
+        
+            <tr>
+                <td><span class="priority-dot" style="background-color: #10b981"></span>P4</td>
+                <td class="text-center font-bold">1</td>
+                <td>
+                    <div class="finding-title">Anti-VM Code</div>
+                    <div class="finding-source">MobSF</div>
+                </td>
+                <td><span class="badge badge-we">MASWE-UNKNOWN</span></td>
+                <td><span class="badge badge-vs">MASVS-UNKNOWN</span></td>
+                <td></td>
+                <td class="recommendation">Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.</td>
+            </tr>
+        
+            <tr>
+                <td><span class="priority-dot" style="background-color: #10b981"></span>P4</td>
+                <td class="text-center font-bold">1</td>
+                <td>
+                    <div class="finding-title">Compiler</div>
+                    <div class="finding-source">MobSF</div>
+                </td>
+                <td><span class="badge badge-we">MASWE-UNKNOWN</span></td>
+                <td><span class="badge badge-vs">MASVS-UNKNOWN</span></td>
+                <td></td>
+                <td class="recommendation">Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.</td>
+            </tr>
+        
+            <tr>
+                <td><span class="priority-dot" style="background-color: #10b981"></span>P4</td>
+                <td class="text-center font-bold">1</td>
+                <td>
+                    <div class="finding-title">MobSF Certificate Finding</div>
+                    <div class="finding-source">MobSF</div>
+                </td>
+                <td><span class="badge badge-we">MASWE-UNKNOWN</span></td>
+                <td><span class="badge badge-vs">MASVS-UNKNOWN</span></td>
+                <td></td>
+                <td class="recommendation">Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.</td>
+            </tr>
+        
+            <tr>
+                <td><span class="priority-dot" style="background-color: #10b981"></span>P4</td>
+                <td class="text-center font-bold">1</td>
+                <td>
+                    <div class="finding-title">Signed Application</div>
+                    <div class="finding-source">MobSF</div>
+                </td>
+                <td><span class="badge badge-we">MASWE-UNKNOWN</span></td>
+                <td><span class="badge badge-vs">MASVS-UNKNOWN</span></td>
+                <td></td>
+                <td class="recommendation">Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.</td>
+            </tr>
+        
+            <tr>
+                <td><span class="priority-dot" style="background-color: #10b981"></span>P4</td>
+                <td class="text-center font-bold">1</td>
+                <td>
+                    <div class="finding-title">Application vulnerable to Janus Vulnerability</div>
+                    <div class="finding-source">MobSF</div>
+                </td>
+                <td><span class="badge badge-we">MASWE-UNKNOWN</span></td>
+                <td><span class="badge badge-vs">MASVS-UNKNOWN</span></td>
+                <td></td>
+                <td class="recommendation">Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.</td>
+            </tr>
+        
+            <tr>
+                <td><span class="priority-dot" style="background-color: #10b981"></span>P4</td>
+                <td class="text-center font-bold">1</td>
+                <td>
+                    <div class="finding-title">MobSF Manifest Finding</div>
+                    <div class="finding-source">MobSF</div>
+                </td>
+                <td><span class="badge badge-we">MASWE-UNKNOWN</span></td>
+                <td><span class="badge badge-vs">MASVS-UNKNOWN</span></td>
+                <td></td>
+                <td class="recommendation">Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.</td>
+            </tr>
+        
+            <tr>
+                <td><span class="priority-dot" style="background-color: #10b981"></span>P4</td>
+                <td class="text-center font-bold">1</td>
+                <td>
+                    <div class="finding-title">App can be installed on a vulnerable unpatched Android version 4.4-4.4.4, [minSdk=19]</div>
+                    <div class="finding-source">MobSF</div>
+                </td>
+                <td><span class="badge badge-we">MASWE-UNKNOWN</span></td>
+                <td><span class="badge badge-vs">MASVS-UNKNOWN</span></td>
+                <td></td>
+                <td class="recommendation">Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.</td>
+            </tr>
+        
+            <tr>
+                <td><span class="priority-dot" style="background-color: #10b981"></span>P4</td>
+                <td class="text-center font-bold">1</td>
+                <td>
+                    <div class="finding-title">Application Data can be Backed up [android:allowBackup=true]</div>
+                    <div class="finding-source">MobSF</div>
+                </td>
+                <td><span class="badge badge-we">MASWE-UNKNOWN</span></td>
+                <td><span class="badge badge-vs">MASVS-UNKNOWN</span></td>
+                <td></td>
+                <td class="recommendation">Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.</td>
+            </tr>
+        
+            <tr>
+                <td><span class="priority-dot" style="background-color: #10b981"></span>P4</td>
+                <td class="text-center font-bold">1</td>
+                <td>
+                    <div class="finding-title">MobSF Code Finding</div>
+                    <div class="finding-source">MobSF</div>
+                </td>
+                <td><span class="badge badge-we">MASWE-UNKNOWN</span></td>
+                <td><span class="badge badge-vs">MASVS-UNKNOWN</span></td>
+                <td></td>
+                <td class="recommendation">Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.</td>
+            </tr>
+        
+            <tr>
+                <td><span class="priority-dot" style="background-color: #10b981"></span>P4</td>
+                <td class="text-center font-bold">1</td>
+                <td>
+                    <div class="finding-title">Calling Cipher.getInstance("AES") will return AES ECB mode by default. ECB mode is known to be weak as it results in the same ciphertext for identical blocks of plaintext.</div>
+                    <div class="finding-source">MobSF</div>
+                </td>
+                <td><span class="badge badge-we">MASWE-005</span></td>
+                <td><span class="badge badge-vs">MASVS-CRYPTO-1</span></td>
+                <td><span class="badge badge-mastg">MASTG-ARCH-2</span><span class="badge badge-mastg">MASTG-CRYPTO-1</span></td>
+                <td class="recommendation">Utiliser des algorithmes de chiffrement forts et modernes (AES-256, RSA-2048+).</td>
+            </tr>
+        
+            <tr>
+                <td><span class="priority-dot" style="background-color: #10b981"></span>P4</td>
+                <td class="text-center font-bold">1</td>
+                <td>
+                    <div class="finding-title">The App logs information. Sensitive information should never be logged.</div>
+                    <div class="finding-source">MobSF</div>
+                </td>
+                <td><span class="badge badge-we">MASWE-UNKNOWN</span></td>
+                <td><span class="badge badge-vs">MASVS-UNKNOWN</span></td>
+                <td></td>
+                <td class="recommendation">Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.</td>
+            </tr>
+        
+            <tr>
+                <td><span class="priority-dot" style="background-color: #10b981"></span>P4</td>
+                <td class="text-center font-bold">1</td>
+                <td>
+                    <div class="finding-title">This App may request root (Super User) privileges.</div>
+                    <div class="finding-source">MobSF</div>
+                </td>
+                <td><span class="badge badge-we">MASWE-UNKNOWN</span></td>
+                <td><span class="badge badge-vs">MASVS-UNKNOWN</span></td>
+                <td></td>
+                <td class="recommendation">Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.</td>
+            </tr>
+        
+            <tr>
+                <td><span class="priority-dot" style="background-color: #10b981"></span>P4</td>
+                <td class="text-center font-bold">1</td>
+                <td>
+                    <div class="finding-title">This App may have root detection capabilities.</div>
+                    <div class="finding-source">MobSF</div>
+                </td>
+                <td><span class="badge badge-we">MASWE-UNKNOWN</span></td>
+                <td><span class="badge badge-vs">MASVS-UNKNOWN</span></td>
+                <td></td>
+                <td class="recommendation">Analyser manuellement cette vulnérabilité avec les outils de sécurité mobile.</td>
+            </tr>
+        
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

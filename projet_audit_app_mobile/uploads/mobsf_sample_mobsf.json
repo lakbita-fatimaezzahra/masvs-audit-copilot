@@ -1,0 +1,51 @@
+{
+  "manifest_analysis": [
+    {
+      "title": "Debuggable Application",
+      "stat": "high",
+      "desc": "The application is debuggable which allows a malicious user to attach a debugger."
+    },
+    {
+      "title": "Insecure Backup Configuration",
+      "stat": "medium",
+      "desc": "The application allows backups which can expose sensitive data."
+    }
+  ],
+  "code_analysis": {
+    "crypto": {
+      "findings": [
+        {
+          "metadata": {
+            "description": "Hardcoded Encryption Key",
+            "severity": "critical",
+            "ref": "https://masvs.owasp.org/checklists/MASVS-CRYPTO-1/"
+          },
+          "files": {
+            "com/example/MainActivity.java": "line 45"
+          }
+        }
+      ]
+    },
+    "storage": {
+      "findings": [
+        {
+          "metadata": {
+            "description": "Insecure Local Storage",
+            "severity": "high",
+            "ref": "https://masvs.owasp.org/checklists/MASVS-STORAGE-1/"
+          },
+          "files": {
+            "com/example/DataModule.java": "line 12"
+          }
+        }
+      ]
+    }
+  },
+  "niap_analysis": [
+    {
+      "title": "Missing SSL Pinning",
+      "description": "The application does not implement SSL pinning, making it vulnerable to MITM attacks.",
+      "severity": "medium"
+    }
+  ]
+}

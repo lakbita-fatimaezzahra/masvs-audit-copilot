@@ -1,0 +1,12 @@
+{
+  "project_name": "application-ios-android",
+  "executive_summary": "Aucun finding détecté dans les entrées analysées.",
+  "findings": [],
+  "metrics": {
+    "total_findings": 0,
+    "priority_counts": {},
+    "mapping_coverage": 0.0,
+    "false_positive_reduction_hint": "Deduplication optimisée par IA effectuée.",
+    "reproducibility": "Pipeline IA, base locale JSON, sorties versionnables."
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "scan_summary": {
+    "app_security_score": 65,
+    "total_findings": 12,
+    "high": 4,
+    "medium": 5,
+    "low": 2,
+    "info": 1
+  },
+  "findings": [
+    {
+      "title": "Hardcoded Secret",
+      "description": "API key or secret hardcoded in source code",
+      "severity": "high",
+      "stat": "high",
+      "file": "MainActivity.java",
+      "line": 45,
+      "evidence": "api_key = 'sk_test_123456789'"
+    },
+    {
+      "title": "Cleartext Traffic",
+      "description": "Application allows cleartext HTTP traffic",
+      "severity": "high",
+      "stat": "high",
+      "file": "AndroidManifest.xml",
+      "line": 12,
+      "evidence": "android:usesCleartextTraffic=\"true\""
+    },
+    {
+      "title": "Debug Mode Enabled",
+      "description": "Application has debug mode enabled in production",
+      "severity": "medium",
+      "stat": "warning",
+      "file": "AndroidManifest.xml",
+      "line": 8,
+      "evidence": "android:debuggable=\"true\""
+    },
+    {
+      "title": "Weak Encryption Algorithm",
+      "description": "Application uses weak cryptographic algorithm",
+      "severity": "medium",
+      "stat": "warning",
+      "file": "CryptoUtils.java",
+      "line": 23,
+      "evidence": "Cipher.getInstance(\"DES/ECB/PKCS5Padding\")"
+    },
+    {
+      "title": "Insecure WebView Configuration",
+      "description": "WebView allows JavaScript execution without security controls",
+      "severity": "medium",
+      "stat": "warning",
+      "file": "WebViewActivity.java",
+      "line": 67,
+      "evidence": "webView.setJavaScriptEnabled(true)"
+    },
+    {
+      "title": "Missing Certificate Pinning",
+      "description": "Application does not implement certificate pinning",
+      "severity": "medium",
+      "stat": "warning",
+      "file": "NetworkManager.java",
+      "line": 89,
+      "evidence": "No SSL certificate validation"
+    },
+    {
+      "title": "Insecure File Permissions",
+      "description": "Application requests dangerous file permissions",
+      "severity": "low",
+      "stat": "info",
+      "file": "AndroidManifest.xml",
+      "line": 15,
+      "evidence": "android.permission.WRITE_EXTERNAL_STORAGE"
+    },
+    {
+      "title": "Backup Enabled",
+      "description": "Application allows backup of sensitive data",
+      "severity": "low",
+      "stat": "info",
+      "file": "AndroidManifest.xml",
+      "line": 10,
+      "evidence": "android:allowBackup=\"true\""
+    }
+  ],
+  "manifest_analysis": {
+    "permissions": [
+      {
+        "name": "android.permission.INTERNET",
+        "risk": "low"
+      },
+      {
+        "name": "android.permission.READ_EXTERNAL_STORAGE",
+        "risk": "medium"
+      },
+      {
+        "name": "android.permission.CAMERA",
+        "risk": "medium"
+      }
+    ]
+  },
+  "certificate_analysis": {
+    "valid": true,
+    "issuer": "CN=Demo Certificate",
+    "expires": "2025-12-31",
+    "algorithm": "SHA1withRSA"
+  }
+}
